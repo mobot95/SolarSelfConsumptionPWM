@@ -4,7 +4,7 @@ A Node.js App that permits to optimize the self-consumption of Solar Energy ON-G
 Throught MQTT Topics, it receive instant power (W) of Inverter (mqtt.topics.powerInverter) and of House (mqtt.topics.powerHouse) and it calculate the specific duty cycle to send in a PWM controller throught MQTT protocol / custom shell command
 
 
-###### Config Example:
+## Configuration:
 ```JSON
 {
   "mqtt": {
