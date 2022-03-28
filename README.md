@@ -9,7 +9,7 @@ Config Example:
 {
   "mqtt": {
     "clientId_prefix": "SolarSelfConsumptionPWM_",
-    "hostname": "mqtt://192.168.1.2522:1883",
+    "hostname": "mqtt://192.168.1.252:1883",
     "username": "mqtt",
     "password": "mqtt",
     "topics": {
