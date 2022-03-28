@@ -10,7 +10,7 @@ const mqtt_password = config.mqtt.password;
 
 const topic_powerHouse = config.mqtt.topics.powerHouse;
 const topic_powerInverter = config.mqtt.topics.powerInverter;
-const topic_publishpowerLoad = config.mqtt.topics.powerLoad;
+const topic_publishPowerLoad = config.mqtt.topics.powerLoad;
 const topic_publishDuty = config.mqtt.topics.publishDuty;
 const topic_publishRange = config.mqtt.topics.publishRange;
 const topic_publishFrequency = config.mqtt.topics.publishFrequency;
@@ -80,7 +80,7 @@ client.publish(topic_publishRange, String(pwmRange));
 client.publish(topic_publishFrequency, String(pwmFreq));
 
 if (customShellExec){
-	shell.exec(customShellExec.replace('{range}',pwmRange).replace('{frequency}', pwmFreq).replace('{duty}', String(pwmDuty)));
+	shell.exec(customShellExec.replace('{range}',String(pwmRange)).replace('{frequency}', String(pwmFreq)).replace('{duty}', String(pwmDuty)));
 }
 
 setInterval(function(){
@@ -126,5 +126,5 @@ setInterval(function(){
 		
 	}
 	
-	client.publish(topic_publishpowerLoad, parseFloat(powerLoad.toString()).toFixed(2));
+	client.publish(topic_publishPowerLoad, parseFloat(powerLoad.toString()).toFixed(2));
 }, scanInterval);
