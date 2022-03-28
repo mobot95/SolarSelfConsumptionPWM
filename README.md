@@ -60,13 +60,19 @@ pm2 start App.js
   "netMargin": 50
 }
 ```
-In the example, I'm using a frequency of 10hz (pwm.frequency) and a range of 100 (pwm.range) to drive an SSR with a resistive load rated at 1530w (load.ratedPower).
-I want to active the PWM when the power available is atleast 350w (load.minPower), I want to do generate PWM settings every 5000ms (scanInterval) and I want to let 50w available in the grid (netMargin)
-I'm publishing PWM settings (duty, range and frequency) to specific topics in order to manage a remote PWM controller
+In the example, a frequency of 10hz (pwm.frequency) and a range of 100 (pwm.range) are set in order to drive an SSR with a resistive load rated at 1530w (load.ratedPower).
+
+PWM is active when the power available is atleast 350w (load.minPower), PWM settings are generated every 5000ms (scanInterval) and a power of atleast 50w it will be available on the grid (netMargin).
+
+PWM settings (duty, range and frequency) are published to specific topics in order to manage a remote PWM controller.
+
+An estimated power associated to the duty applied to PWM  it's published to specific topic (topics.publishPowerLoad)
 
 ## Custom Shell Execution
-Instead of MQTT, PWM values (duty, range and frequency) can be sent in an custom shell that it's possible to write in "customShellExec".
-It's possible to run a local script using external library (pigpio in a Raspberry)
+Instead of MQTT, A custom shell can be executed every time PWM settings are generated.
+
+It's possible to write a custom shell editing the "customShellExec" parameter in the configuration
+
 ###### Example:
 ```
 "customShellExec": "python3 pwm-controller.py {frequency} {range} {duty}"
