@@ -1,0 +1,27 @@
+{
+    "mqtt": {
+        "clientId_prefix": "SolarPowerPWMHeater_",
+        "hostname": "mqtt://192.168.1.2522:1883",
+        "username": "mqtt",
+        "password": "mqtt",
+        "topics": {
+            "powerHouse": "shellies/shelly_em/emeter/0/power",
+            "powerInverter": "solaredge/power",
+            "publishPowerLoad": "PWMHeater/power",
+            "publishDuty": "PWMHeater/duty",
+            "publishRange": "PWMHeater/range",
+            "publishFrequency": "PWMHeater/frequency"
+        }
+    },
+    "pwm": {
+        "frequency": 10,
+        "range": 100
+    },
+    "load": {
+        "ratedPower": 1530,
+        "minPower": 150
+    },
+    "customShellExec": "",
+    "scanInverval": 8000,
+    "netMargin": 0
+}
