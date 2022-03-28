@@ -1,7 +1,7 @@
 # SolarSelfConsumptionPWM
 
-A Node.js App that permits to optimize the self-consumption of Solar Energy ON-Grid system, using the energy available (produced and not used) to control a PWM generator
-Throught MQTT Topics, it receive instant power (W) of Inverter (mqtt.topics.powerInverter) and of House (mqtt.topics.powerHouse) and it calculate the specific duty cycle to send in a PWM controller throught MQTT protocol / custom shell command
+A Node.js App that permits to optimize the self-consumption of Solar Energy ON-Grid system, using the energy available (produced and not used) to control a PWM generator.
+Throught MQTT Topics, it receive instant power (W) of Inverter (mqtt.topics.powerInverter) and of House (mqtt.topics.powerHouse) and it calculate the specific duty cycle to send in a PWM controller throught MQTT protocol or custom shell command
 
 
 ## Configuration Example:
@@ -39,7 +39,7 @@ I'm driving a resistive load rated at 1530w (load.ratedPower), I want to active 
 
 ## Custom Shell Execution
 Instead of MQTT, PWM values (duty, range and frequency) can be sent in an custom shell that you can write in config.customShellExec.
-######Example:
+###### Example:
 ```
 "customShellExec": "python3 pwm-controller.py {frequency} {range} {duty}"
 ```
