@@ -39,7 +39,7 @@ I'm driving a resistive load rated at 1530w (load.ratedPower), I want to active 
 
 ## Custom Shell Execution
 Instead of MQTT, PWM values (duty, range and frequency) can be sent in an custom shell that you can write in config.customShellExec.
-Example:
+######Example:
 ```
 "customShellExec": "python3 pwm-controller.py {frequency} {range} {duty}"
 ```
