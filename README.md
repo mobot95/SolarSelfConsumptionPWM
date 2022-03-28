@@ -6,7 +6,7 @@ Throught MQTT Topics, it receive instant power (W) of Inverter (mqtt.topics.powe
 
 Tested using:
 -  [Remote PWM Controller - ESP8266](https://github.com/mobot95/RemotePWMController-ESP8266)
--  Pigpio library with RPI Model B
+-  Pigpio library with RPI Model B using a custom shell
 
 ## Installation
 ###### Prerequisites:
